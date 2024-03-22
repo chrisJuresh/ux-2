@@ -1,0 +1,25 @@
+\newpage
+
+\begin{textblock*}{3cm}(0cm,-1cm) % {block width} (coords)
+    \begin{tikzpicture}
+        \fill[ERDCRed] (0,0) rectangle (3,29.1); % Fill for the sidebar
+        \draw[white, thick] (0.1,0.1) rectangle (2.9,29.11); % White border for aesthetic
+    \end{tikzpicture}
+\end{textblock*}
+
+% Add vertical text for the book title
+\begin{textblock*}{40cm}(1cm,10cm) % Adjust the width and position of the text block to accommodate larger text
+    \rotatebox{90}{
+        \fontsize{40}{48}\selectfont % Adjusted for better fit
+        \textbf{\color{white}Volumes} % Change text here
+    }
+\end{textblock*}
+
+\newgeometry{left=5.81cm, top=1in, bmargin=1in, right=1in}
+\hfill
+\wordcount words
+
+\tableofcontents
+
+
+\restoregeometry

@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % for including images
+\usepackage{xcolor} % for color definition
+\usepackage{tikz} % for drawing shapes
+\usepackage[absolute,overlay]{textpos} % for absolute positioning of the text blocks
+\usepackage{lmodern}
+\usepackage{rotating} % For text rotation
+\usepackage{svg}
+\usepackage{subfiles}
+\usepackage{geometry}
+\usepackage{sectsty}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{subfigure}
+\usepackage{afterpage}
+
+\newcommand\wordcount{
+\immediate\write18{texcount -1 -sum -merge chapters/implementation/* \jobname.tex 2>&1 | grep '^[0-9][0-9]*' > \jobname-words.sum}
+  \input{\jobname-words.sum}
+}
+
+\definecolor{ERDCRed}{RGB}{32, 42, 69}
+\sectionfont{\fontsize{22}{30}\selectfont}
+
+\begin{document}
+
+\subfile{content/title}
+\subfile{content/contents}
+\subfile{content/design}
+\subfile{content/dc}
+\subfile{content/at}
+\subfile{content/references}
+
+\end{document}
